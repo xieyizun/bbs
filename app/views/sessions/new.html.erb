@@ -2,13 +2,13 @@
 <div class="center">
   <%= form_for(:session, url: sessions_path) do |f| %>
 
-    <td><%= f.label :email %></td>
-    <td><%= f.text_field :email %></td>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
 
-    <td><%= f.label :password %></td>
-    <td><%= f.password_field :password %></td>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-    <td><%= f.submit 'login', class: 'btn btn-large btn-primary' %></td>
+    <%= f.submit 'login', class: 'btn btn-large btn-primary' %>
 
   <% end %>
 </div>
