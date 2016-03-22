@@ -1,0 +1,1 @@
+1.数据库字段，name, email设定长度，不用255；post的内容content使用text

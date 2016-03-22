@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 用于显示渲染后的标签 -->
+<ul id="element"></ul>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.js"></script>
+<!-- 定义模板，将模板内容放到一个script标签中 -->
+
+<script type="text/template" id="tpl">
+    <% for(var i = 0; i < list.length; i++) { %>
+    <% var item = list[i] %>
+    <li>
+        <span><%=item.firstName%> <%=item.lastName%></span>
+        <span><%-item.city%></span>
+    </li>
+    <% } %>
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.getJSON("http://0.0.0.0:3000/static_pages/home", function (result) {
+            $.each(result, function (i, field) {
+                alert(field);
+            });
+        });
+    });
+
+    // 获取渲染元素和模板内容
+    var element = $('#element'),
+            tpl = $('#tpl').html();
+
+    // 创建数据, 这些数据可能是你从服务器获取的
+    var data = {
+        list: [
+            {firstName: '<a href="#">Zhang</a>', lastName: 'San', city: 'Shanghai'},
+            {firstName: 'Li', lastName: 'Si', city: '<a href="#">Beijing</a>'},
+            {firstName: 'Wang', lastName: 'Wu', city: 'Guangzhou'},
+            {firstName: 'Zhao', lastName: 'Liu', city: 'Shenzhen'}
+        ]
+    }
+
+    // 解析模板, 返回解析后的内容
+    var html = _.template(tpl);
+    // 将解析后的内容填充到渲染元素
+    element.html(html(data));
+</script>
+
+</body>
+</html>
