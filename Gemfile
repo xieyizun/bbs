@@ -32,11 +32,6 @@ gem 'underscore-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
-#to generate doc
-gem 'redcarpet', '~> 2.1.1'
-gem 'nokogiri'
-gem 'sdoc', require: false
-
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

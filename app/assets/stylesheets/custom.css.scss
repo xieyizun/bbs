@@ -19,7 +19,7 @@ textarea {
 }
 
 .center {
-  text-align: center;
+  text-align: left;
   h1 {
     margin-bottom: 10px;
   }
@@ -92,4 +92,15 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+ul {
+  list-style:none;
+}
+
+#time {
+  text-align: right;
+}
+#comment {
+  padding-right: 10px;
 }

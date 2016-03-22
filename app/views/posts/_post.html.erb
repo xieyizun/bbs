@@ -1,8 +1,12 @@
 <li>
-  <div>
-    <div>
-      <%= post.content %>
+  <div class="panel panel-default">
+    <div class="panel-heading">poster: <%= post.user.name %></div>
+      <div class="panel-body">
+         <p><%= post.content %></p>
+         <div id="time">
+           <span id="comment"><%= link_to "comment", post, class: "btn btn-small" %></span>
+           <span><%= post.created_at %></span>
+         </div>
     </div>
-    <span><%= post.created_at %></span>
   </div>
 </li>
